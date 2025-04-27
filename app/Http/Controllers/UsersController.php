@@ -1419,7 +1419,11 @@ class UsersController extends Controller
             $user->device_token = $request->device_token;
             $user->fullname = $request->fullname;
             $user->login_type = $request->login_type;
+
+            // recharge wallet
+            $user->wallet = 9999;
             $user->save();
+
 
             $user = Users::find($user->id);
 
